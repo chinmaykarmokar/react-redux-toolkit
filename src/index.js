@@ -7,10 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from "./features/user";
+import pollingReducer from "./features/polling";
 
 const store = configureStore({
 	reducer: {
 		user: userReducer,
+		polling: pollingReducer
 	}
 })
 

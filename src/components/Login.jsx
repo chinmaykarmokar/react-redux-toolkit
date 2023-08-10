@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { login, logout } from "../features/user";
+import { setPollingInterval, removePollingInterval } from "../features/polling";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,16 @@ const Login = () => {
         dispatch(logout());
     }
 
+    const setPollingHandler = () => {
+        dispatch(setPollingInterval({
+            interval: 2000
+        }))
+    }
+
+    const removePollingHandler = () => {
+        dispatch(removePollingInterval());
+    }
+
     return (
         <>
             <button onClick = {submitProfileDetailsHandler}>
@@ -23,6 +34,12 @@ const Login = () => {
             </button>
             <button onClick = {logOutHandler}>
                 Logout
+            </button>
+            <button onClick = {setPollingHandler}>
+                Set Polling
+            </button>
+            <button onClick = {removePollingHandler}>
+                Remove Polling
             </button>
         </>
     )
