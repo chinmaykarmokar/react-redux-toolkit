@@ -8,11 +8,16 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from "./features/user";
 import pollingReducer from "./features/polling";
+import { mainApiSlice } from './mainApiSlice';
 
 const store = configureStore({
 	reducer: {
 		user: userReducer,
-		polling: pollingReducer
+		polling: pollingReducer,
+		[mainApiSlice.reducerPath]: mainApiSlice.reducer
+	},
+	middleware: (getDefaultMiddleware) => {
+		return getDefaultMiddleware().concat(mainApiSlice.middleware)
 	}
 })
 
