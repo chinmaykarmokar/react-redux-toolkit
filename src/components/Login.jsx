@@ -29,7 +29,7 @@ const Login = () => {
 
     return (
         <>
-            <button onClick = {submitProfileDetailsHandler}>
+            {/* <button onClick = {submitProfileDetailsHandler}>
                 Login
             </button>
             <button onClick = {logOutHandler}>
@@ -40,7 +40,7 @@ const Login = () => {
             </button>
             <button onClick = {removePollingHandler}>
                 Remove Polling
-            </button>
+            </button> */}
         </>
     )
 }
