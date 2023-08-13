@@ -13,7 +13,7 @@ const Profile = () => {
     const polling = useSelector((state) => {return state.polling.value});
 
     // Fetch data directly from state instead of using custom hooks
-    const dataFromState = useSelector((state) => {return state.mainApi.queries['getUsers(undefined)'].data});
+    const dataFromState = useSelector((state) => {return state?.mainApi?.queries['getUsers(undefined)']?.data});
 
     // Fetch data from custom hooks created from RTK Query
     const { data: allUsers } = useGetUsersQuery();
